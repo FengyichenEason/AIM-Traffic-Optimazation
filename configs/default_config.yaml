@@ -1,0 +1,59 @@
+# 交通优化模型默认配置
+
+# 基础参数
+total_time: 80           # 总模拟时间
+output_dir: 'outputs'    # 输出目录
+
+# 道路配置
+road_length:
+  - 154
+  - 145
+  - 154
+  - 145
+
+# 车辆类型配置
+vehicle_types:
+  car:
+    v_min: 0
+    v_max: 12
+    a_min: -3
+    a_max: 3
+    cost: 1
+  bus:
+    v_min: 0
+    v_max: 10
+    a_min: -2
+    a_max: 2
+    cost: 1
+
+# 初始速度
+initial_velocity: 6
+
+# 约束参数
+constraints:
+  reaction_time:
+    car: 0.2
+    bus: 0.3
+  vehicle_gap:
+    car: 3
+    bus: 8
+
+# 实验参数
+experiments:
+  base_density: 0.3
+  num_experiments: 6
+  density_range:
+    min: 0.1
+    max: 0.5
+    step: 0.05
+
+# 性能指标阈值
+performance_thresholds:
+  max_total_delay: 1000
+  max_travel_time: 200
+  equity_factor: 0.2  # 公平性因子
+
+# 日志配置
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
